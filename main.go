@@ -693,7 +693,7 @@ func migrateDevices() {
 		asDEV := ASDevice{}
 		err := asDB.Get(&asDEV, "select * from device where dev_eui = $1", dev.DevEUI)
 		if err != nil {
-			panic(err)
+			log.Printf("Get device %s from AS database error: %s", dev.DevEUI, err)
 		}
 
 		_, err = csDB.Exec(`
