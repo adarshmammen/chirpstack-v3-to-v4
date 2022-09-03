@@ -745,7 +745,7 @@ func migrateDevices() {
 			hstoreToJSON(asDEV.Variables),
 		)
 		if err != nil {
-			panic(err)
+			log.Printf(err)
 		}
 
 		// Migrate device keys
